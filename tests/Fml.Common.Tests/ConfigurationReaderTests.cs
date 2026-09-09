@@ -49,10 +49,14 @@ public class ConfigurationReaderTests
         {
             var configuration = Configuration(
                 ("Fml:Ratio", "1.5"),
-                ("Fml:Amount", "250000.75"));
+                ("Fml:Amount", "250000.75"),
+                ("Fml:Grouped", "1,000.5"),
+                ("Fml:GroupedAmount", "250,000.75"));
 
             Assert.Equal(1.5, configuration.GetDouble("Fml:Ratio", 0));
             Assert.Equal(250_000.75m, configuration.GetDecimal("Fml:Amount", 0m));
+            Assert.Equal(1_000.5, configuration.GetDouble("Fml:Grouped", 0));
+            Assert.Equal(250_000.75m, configuration.GetDecimal("Fml:GroupedAmount", 0m));
         }
         finally
         {

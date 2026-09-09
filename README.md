@@ -4,7 +4,7 @@ Cross-cutting building blocks shared by Fleet Maintenance & Logistics (FML) serv
 extracted from the [`fleet-maintenance-logistics-source`](https://github.com/ipsorakis/fleet-maintenance-logistics-source)
 monolith so that every service can depend on one implementation instead of copying it.
 
-`0.1.0` was the initial release; `0.1.1` parses numeric configuration with the invariant culture.
+`0.1.0` was the initial release; `0.1.1`/`0.1.2` parse numeric configuration with the invariant culture.
 
 ## What's in the library
 
@@ -32,7 +32,7 @@ dotnet nuget add source https://nuget.pkg.github.com/ipsorakis/index.json \
 Then reference it:
 
 ```xml
-<PackageReference Include="Fml.Common" Version="0.1.1" />
+<PackageReference Include="Fml.Common" Version="0.1.2" />
 ```
 
 ## Versioning
@@ -55,5 +55,5 @@ library, then tag the release.
 ```bash
 dotnet build
 dotnet test
-dotnet pack src/Fml.Common/Fml.Common.csproj -o artifacts   # produces Fml.Common.0.1.1.nupkg
+dotnet pack src/Fml.Common/Fml.Common.csproj -o artifacts   # produces Fml.Common.0.1.2.nupkg
 ```

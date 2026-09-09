@@ -10,7 +10,7 @@
 
   <PropertyGroup>
     <PackageId>Fml.Common</PackageId>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Authors>Fleet Maintenance &amp; Logistics</Authors>
     <Description>Cross-cutting building blocks shared by Fleet Maintenance &amp; Logistics services: user/auth contracts, password and token helpers, OpenTelemetry primitives and configuration readers.</Description>
     <PackageTags>fml;fleet;auth;observability</PackageTags>
