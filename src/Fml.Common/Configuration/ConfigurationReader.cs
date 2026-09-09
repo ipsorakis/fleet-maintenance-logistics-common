@@ -14,7 +14,7 @@ public static class ConfigurationReader
             : fallback;
 
     public static double GetDouble(this IConfiguration configuration, string key, double fallback) =>
-        double.TryParse(configuration[key], NumberStyles.Float, CultureInfo.InvariantCulture, out var parsed)
+        double.TryParse(configuration[key], NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out var parsed)
             ? parsed
             : fallback;
 
