@@ -4,7 +4,7 @@ Cross-cutting building blocks shared by Fleet Maintenance & Logistics (FML) serv
 extracted from the [`fleet-maintenance-logistics-source`](https://github.com/ipsorakis/fleet-maintenance-logistics-source)
 monolith so that every service can depend on one implementation instead of copying it.
 
-`0.1.0` is the initial release.
+`0.1.0` was the initial release; `0.1.1` parses numeric configuration with the invariant culture.
 
 ## What's in the library
 
@@ -12,7 +12,7 @@ monolith so that every service can depend on one implementation instead of copyi
 | --- | --- |
 | `FML.Common.Auth` | `User` and `UserRole`, the login/user contracts (`LoginRequest`, `LoginResponse`, `CreateUserRequest`), `PasswordHasher` (salted SHA-256) and `AuthTokenFactory` (opaque session token). |
 | `FML.Common.Observability` | `FmlTelemetry`: the `fml-monolith` activity source and meter plus the `fml.telemetry.readings_ingested`, `fml.maintenance.work_orders_created`, `fml.inventory.parts_reordered` and `fml.reporting.reports_generated` counters. |
-| `FML.Common.Configuration` | `ConfigurationReader` extensions for fallback-preserving `bool`/`int`/`double`/`decimal` reads off `IConfiguration`. |
+| `FML.Common.Configuration` | `ConfigurationReader` extensions for fallback-preserving `bool`/`int`/`double`/`decimal` reads off `IConfiguration`, parsed with `CultureInfo.InvariantCulture`. |
 
 The salt and token lifetime are parameters, not configuration the library reads itself —
 each service keeps owning its own configuration and passes the values in. Service-specific
@@ -32,7 +32,7 @@ dotnet nuget add source https://nuget.pkg.github.com/ipsorakis/index.json \
 Then reference it:
 
 ```xml
-<PackageReference Include="Fml.Common" Version="0.1.0" />
+<PackageReference Include="Fml.Common" Version="0.1.1" />
 ```
 
 ## Versioning
@@ -55,5 +55,5 @@ library, then tag the release.
 ```bash
 dotnet build
 dotnet test
-dotnet pack src/Fml.Common/Fml.Common.csproj -o artifacts   # produces Fml.Common.0.1.0.nupkg
+dotnet pack src/Fml.Common/Fml.Common.csproj -o artifacts   # produces Fml.Common.0.1.1.nupkg
 ```
