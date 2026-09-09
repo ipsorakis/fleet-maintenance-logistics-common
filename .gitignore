@@ -1,5 +1,4 @@
-bin/
-obj/
+target/
 artifacts/
 *.user
 .vs/
